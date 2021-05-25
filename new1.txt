@@ -1,0 +1,2 @@
+python c:\sel\lessons\lesson9_step8.py
+python c:\sel\lessons\3.py
