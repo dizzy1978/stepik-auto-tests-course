@@ -1,4 +1,4 @@
-s = input()
+s = 'My Name is Julia'
 
-if 'Taras' in s:
-    print('Taras found')
+if 'Name' in s:
+    print('Substring found')
