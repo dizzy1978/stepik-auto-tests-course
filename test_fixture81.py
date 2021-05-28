@@ -5,7 +5,6 @@ from selenium import webdriver
 
 link = "http://selenium1py.pythonanywhere.com/"
 
-
 @pytest.fixture(scope="function")
 def browser():
     print("\nstart browser for test..")
