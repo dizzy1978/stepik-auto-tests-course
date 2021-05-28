@@ -17,9 +17,11 @@ links = [
     ("https://stepik.org/lesson/236905/step/1")
  ]
 
+a = ""
 
 @pytest.fixture(scope="function")
 def browser():
+    global a
     print("\nstart browser for test..")
     options = webdriver.ChromeOptions()
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
@@ -28,7 +30,7 @@ def browser():
     yield browser
     print("\nquit browser..")
     browser.quit()
-
+    print(a)
 
 
 
@@ -36,6 +38,7 @@ class TestMainPage1():
 
     @pytest.mark.parametrize('link', links)
     def test_found_message(self, browser, link):
+        global a
         linka = f"{link}"
         browser.get(linka)
         text_area = browser.find_element_by_xpath('//textarea')
@@ -50,7 +53,8 @@ class TestMainPage1():
         )
         mmm = message.text
 
-        print(mmm)
+        if mmm != "Correct!":
+            a += mmm
 
         assert "Correct!" in mmm, "Это часть послания!"
 
