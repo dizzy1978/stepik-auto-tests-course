@@ -17,6 +17,7 @@ links = [
     ("https://stepik.org/lesson/236905/step/1")
  ]
 
+
 @pytest.fixture(scope="function")
 def browser():
     print("\nstart browser for test..")
@@ -27,6 +28,9 @@ def browser():
     yield browser
     print("\nquit browser..")
     browser.quit()
+
+
+
 
 class TestMainPage1():
 
@@ -45,5 +49,10 @@ class TestMainPage1():
             EC.visibility_of_element_located((By.CLASS_NAME, 'smart-hints__hint'))
         )
         mmm = message.text
-        print(mmm) # Костыль, можно заполнять переменную через self.<имя переменной> += mmm
+
+        print(mmm)
+
         assert "Correct!" in mmm, "Это часть послания!"
+
+
+
