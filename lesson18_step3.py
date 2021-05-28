@@ -20,6 +20,7 @@ def browser():
     options = webdriver.ChromeOptions()
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
     browser = webdriver.Chrome(options=options)
+    browser.implicitly_wait(10)
     yield browser
     print("\nquit browser..")
     browser.quit()
@@ -27,15 +28,24 @@ def browser():
 class TestMainPage1():
 
     @pytest.mark.parametrize('link', links)
-    def test_guest_should_see_login_link(self, browser, link):
+    def test_found_message(self, browser, link):
         linka = f"{link}"
         browser.get(linka)
-        #text_area = browser.find_element_by_id("ember93")
+        text_area = browser.find_element_by_xpath('//textarea')
         y = str(math.log(int(time.time())))
-        #text_area.send_keys(y)
-        print("Вычисленное значение %s", y)
+        text_area.send_keys(y)
+        time.sleep(1)
+        button = browser.find_element_by_xpath('//button[text()="Отправить"]')
+        button.click()
+        time.sleep(3)
 
 
+
+
+
+        #print("Вычисленное значение %s", y)
         #print("Проверяемый URL %s" % linka)
         #browser.find_element_by_css_selector("#login_link")
+        #button1 = browser.find_element_by_xpath('//button[text()="Отправить"]')
+        #button1.click()
 
