@@ -37,18 +37,17 @@ class TestMainPage1():
         text_area = browser.find_element_by_xpath('//textarea')
         y = str(math.log(int(time.time())))
         text_area.send_keys(y)
-        button = WebDriverWait(browser, 5).until(
+
+        button = WebDriverWait(browser, 20).until(
             EC.element_to_be_clickable((By.XPATH, '//button[text()="Отправить"]'))
         )
         button.click()
-        #time.sleep(1)
-        message = browser.find_element_by_class_name("smart-hints__hint")
+
+        message = WebDriverWait(browser, 20).until(
+            EC.visibility_of_element_located((By.CLASS_NAME, 'smart-hints__hint'))
+        )
         print(message.text)
         assert "Correct!" in message.text, "Это часть послания!"
-
-
-
-
 
         # <pre class ="smart-hints__hint" > Correct! < / pre >
         #print("Вычисленное значение %s", y)
@@ -56,4 +55,3 @@ class TestMainPage1():
         #browser.find_element_by_css_selector("#login_link")
         #button1 = browser.find_element_by_xpath('//button[text()="Отправить"]')
         #button1.click()
-
