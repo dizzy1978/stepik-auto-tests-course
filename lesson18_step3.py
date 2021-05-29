@@ -1,10 +1,10 @@
 import time
 import math
-import pytest
+#import pytest
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium import webdriver
+#from selenium import webdriver
 
 links = [
     ("https://stepik.org/lesson/236895/step/1"),
@@ -19,20 +19,18 @@ links = [
 
 a = ""
 
-@pytest.fixture(scope="function")
-def browser():
-    global a
-    print("\nstart browser for test..")
-    options = webdriver.ChromeOptions()
-    options.add_experimental_option('excludeSwitches', ['enable-logging'])
-    browser = webdriver.Chrome(options=options)
-    browser.implicitly_wait(20)
-    yield browser
-    print("\nquit browser..")
-    browser.quit()
-    print(a)
-
-
+#@pytest.fixture(scope="function")
+#def browser():
+#    global a
+#    print("\nstart browser for test..")
+#    options = webdriver.ChromeOptions()
+#    options.add_experimental_option('excludeSwitches', ['enable-logging'])
+#    browser = webdriver.Chrome(options=options)
+#    browser.implicitly_wait(20)
+#    yield browser
+#    print("\nquit browser..")
+#    browser.quit()
+#    print(a)
 
 class TestMainPage1():
 
