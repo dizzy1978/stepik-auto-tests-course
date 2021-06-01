@@ -1,0 +1,17 @@
+1622291408292	geckodriver	INFO	Listening on 127.0.0.1:59541
+1622291411339	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Temp\\rust_mozprofileaB4FMC"
+1622291411743	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1622291413815	Marionette	INFO	Listening on port 59549
+1622291413895	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://stepik.azureedge.net/static/frontend-build/vendor.js?v=1621599576, line 6203: unreachable code after return statement
+1622291430419	Marionette	INFO	Stopped listening on port 59549
+1622555061363	geckodriver	INFO	Listening on 127.0.0.1:53565
+1622555064363	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Temp\\rust_mozprofilehZXGtS"
+1622555065144	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1622555066738	Marionette	INFO	Listening on port 53573
+1622555067168	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://selenium1py.pythonanywhere.com/ru/, line 374: ReferenceError: oscar is not defined
+1622555069361	Marionette	INFO	Stopped listening on port 53573
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 1030: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Temp\rust_mozprofilehZXGtS\protections.sqlite
